@@ -7,7 +7,7 @@ $con = $installer->createDBandTables();
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Vline php example set up</title>
+    <title>vLine PHP Example Configuration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -47,11 +47,12 @@ $con = $installer->createDBandTables();
 
     <div class="container">
 
-      <h1>Step 3: Install database and tables</h1>
+      <h1>Step 3: Configure Database</h1>
       <hr>
       <p>
       	<h2>Info</h2>
-        This step creates the database <code>vline-php-example</code> and all the tables needed in order for the demo to run
+        This step creates a database called <code>vline-php-example</code> along with all the tables needed
+        for the demo to run.
       </p>
       <hr>
       <p>
@@ -59,25 +60,25 @@ $con = $installer->createDBandTables();
         <form class="navbar-form" action="actions/saveDBandContinue.php" method="post">
         	<table class="table">
             	<tr>
-                	<td>Database created</td>
+                	<td>Database Created</td>
                     <td><img src="../images/<?php echo $installer->getYesNoIcon($con['dbcreated']) ?>.png"></td>
                 </tr>
                 <tr>
-                	<td>Tables created</td>
+                	<td>Tables Created</td>
                     <td><img src="../images/<?php echo $installer->getYesNoIcon($con['tablecreated']) ?>.png"></td>
                 </tr>
                 <tr>
-                	<td>Admin account created</td>
+                	<td>Admin Account Created</td>
                     <td><img src="../images/<?php echo $installer->getYesNoIcon($con['admincreated']) ?>.png"></td>
                 </tr>
                 <?php if($con['admincreated']){ ?>
                 <tr>
-                  <td>Admin account defaults:</td>
+                  <td>Admin Account Defaults:</td>
                   <td>Username: admin, password: admin</td>
                 </tr>
                 <?php } else{ ?>
                 <tr>
-                  <td colspan="2">The Admin account has not been created. Most propably because the table already contains users.</td>
+                  <td colspan="2">The admin account was not created. Does the table already exist?</td>
                 </tr>
                 <?php } ?>
             </table>

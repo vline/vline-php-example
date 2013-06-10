@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Class's "Checker" "checkInstallation" method checks if the vline php example has been properly installed and configured  
+// Class's "Checker" "checkInstallation" method checks if the vLine PHP example has been properly installed and configured
 include('./classes/Checker.php');
 include('./classes/DbHandler.php');
 $chk = new Checker();
@@ -14,21 +14,22 @@ else{
 		header("Location: ./index.php");
 	else{
 	// the application is installed and configured properly, the user is authenticated
-	// we instatiate an object of the class DbHandler
+	// we instantiate an object of the class DbHandler
 		$dbh = new DbHandler();
 	// we connect to the database
 		$dbh->connect();	
 	// and get all the registered users
 		$users = $dbh->getUsers();
-	// Vline
+	// vLine
 	// Before anything else, first we have to include the JWT.php file 
 		include("./includes/JWT.php");
-	// And now we acquire the token form Vline by setting the user and calling the init method of the Vline class
+	// And now we create the authToken for vLine authentication by setting the user and calling the init method of the
+	// Vline class
 		include("./classes/Vline.php");
 		$vline = new Vline();
 		$vline->setUser($_SESSION['user']['id'], $_SESSION['user']['surname']." ".$_SESSION['user']['name']);
 		$vline->init();
-	// Almost ready. All we have to do is to include the vline.js script on the head section. Also, take a look on the scrit placed just before the </body> tag.
+	// Almost ready. All we have to do is to include the vline.js script in the head section.
 	}
 }
 ?>
@@ -36,7 +37,7 @@ else{
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Vline php example</title>
+    <title>vLine PHP Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -64,10 +65,10 @@ else{
     
     <script src="scripts/jquery-1.10.1.min.js"></script>
     
-    <!-- vline --------------------------------------------->
-    <!-- Load the vline script ----------------------------->
+    <!-- vLine --------------------------------------------->
+    <!-- Load the vLine script ----------------------------->
     <script src="https://static.vline.com/vline.js" type="text/javascript"></script>
-	<!-- /vline script ------------------------------------->
+	<!-- /vLine script ------------------------------------->
 
 
 
@@ -102,7 +103,7 @@ else{
             <div style="padding:2%; width:96%">
                 <h4>Make calls</h4>
                  <p>Click on any of the online users listed below in order to initiate a call. <br>
-The users that are online are annotated by blue background color.</p>
+Users that are online are highlighted in blue.</p>
              </div>
           </div><!--/.well -->
           <div class="well sidebar-nav">
@@ -116,36 +117,34 @@ The users that are online are annotated by blue background color.</p>
         </div><!--/span-->
         <div class="span9">
           <div class="hero-unit">
-            <h1>Vline php example</h1>
-            <p>Simple implementation of the Vline API integration using php.</p>
+            <h1>vLine PHP Example</h1>
+            <p>Simple example of the vLine API integrated into a PHP app.</p>
           </div>
           <div class="row-fluid">
             <div class="span4">
-              <h2>Who's online</h2>
-              <p>On the left there is the list of the registered users to our application. Vline API provides us the capability to &quot;listen&quot; and know, at any time, who's online and who's not. Users that are online are annotated by blue background color.</p>
+              <h2>Online Users</h2>
+              <p>On the left is a list of the application's users. The vLine API provides
+              the ability to publish and subscribe to any user's presence. Users that are online are highlighted in
+              blue.</p>
             </div><!--/span-->
             <div class="span4">
-              <h2>How to make a call</h2>
+              <h2>Test Call</h2>
               <p>Open up an incognito window on Chrome. Log in as a different user and make a call.</p>
             </div><!--/span-->
             <div class="span4">
-              <h2>API reference</h2>
-              <p>Except the ones used on this example Vline's API provides a number of other features and capabilities. For a full API reference you can visit the Developers section of Vline's website.</p>
-              <p><a class="btn" href="https://vline.com/developer/docs/vline.js/" target="_blank">API overview &raquo;</a></p>
+              <h2>API Reference</h2>
+              <p>In addition to the APIs shown in this example, the vLine API provides many more features
+              and capabilities. The complete API reference is available in the Developer section of the vLine website.</p>
+              <p><a class="btn" href="https://vline.com/developer/docs/vline.js/" target="_blank">API Overview&raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
 
       <hr>
-	<!--
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-	-->
     </div><!--/.fluid-container-->
 
-	<!-- vline ------------------------------------------->
+	<!-- vLine ------------------------------------------->
 	<script>
 	var vlineClient = (function(){
 	  
@@ -206,7 +205,7 @@ The users that are online are annotated by blue background color.</p>
 	  return client;
 	})();
 	</script>
-    <!-- /vline -------------------------------------------->
+    <!-- /vLine -------------------------------------------->
     
   </body>
 </html>

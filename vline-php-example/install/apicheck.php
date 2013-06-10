@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Vline php example set up</title>
+    <title>vLine PHP Example Configuration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -42,27 +42,30 @@
 
     <div class="container">
 
-      <h1>Step 4: Configure Vline API Class</h1>
+      <h1>Step 4: Configure the vLine API Class</h1>
       <hr>
       <p>
       	<h2>Info</h2>
-        The main PHP class used from the demo is located on the folder "classes" that resides on the root directory of the vline php example application. The name of the file is <code>Vline.php</code>. In order for the demo to operate you have to follow these steps:
+        In order for the demo to work, you must perform the following steps:
         <ul>
        	 	<li>Sign up for a <a href="https://vline.com/developer/" target="_blank">vLine developer account</a> and create your vLine service.</li>
 			<li>Make note of your <code>API Secret</code> on the <code>Service Settings</code> tab in the <a href="https://vline.com/developer/app/" target="_blank">vLine Developer Console</a>.</li>
-            <li>Open the file <code>Vline.php</code> and place your API ID and Secret on the class variables.</li>
+            <li>Open <code>vline-php-example/classes/Vline.php</code> and fill in your your <code>Service ID</code>
+            and <code>API Secret</code>.</li>
             <li>You are ready to go!</li>
         </ul>
       </p>
       <hr>
       <p>
-      	<h2>Where to go from here</h2>
+      	<h2>Next Steps</h2>
         <ul>
-        	<li><a href="../admin/">Add some users to the application</a></li>
+        	<li><a href="../admin/">Add users</a></li>
             <li><a href="../">Go straight to the application</a></li>
         </ul>
         <div style="background-color:#eee; width:98%; padding:1%">
-        All users inserted by the administration panel are stored on the table <code>users</code> of the <code>vline-php-example</code> database. The main application loads the users from that table. In order to understand the VLine's API usage you should mainly focus and study the source code of the <code>main.php</code> and <code>Vline.php</code> files located on the root and on the classes folders of the application.
+        All users added with the administration panel are stored in the <code>users</code> table in the
+        <code>vline-php-example</code> database. In order to better understand the integration,
+        take a look at <code>vline-php-example/main.php</code> and <code>vline-php-example/classes/Vline.php</code>.
         </div>
       </p>
       <?php if($con['dbcreated'] && $con['tablecreated']){ ?>

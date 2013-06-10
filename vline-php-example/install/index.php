@@ -7,7 +7,7 @@ $res = $installer->checkConfFile();
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Vline php example set up</title>
+    <title>vLine PHP Example Configuration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -52,7 +52,8 @@ $res = $installer->checkConfFile();
       <hr>
       <p>
       	<h2>Info</h2>
-      	The cofiguration file in Vline's php example is <code>conf.json</code>, is located on the root direcory of the example's folder and it stores the database connection information (host, username , password).<br>
+      	The configuration file, <code>vline-php-example/conf.json</code>, contains the database connection information
+      	(host, username , password).<br>
         <h4>The file's format is:</h4><br>
         <pre>
         {
@@ -67,11 +68,11 @@ $res = $installer->checkConfFile();
       	<h2>Check</h2>
         <table class="table">
          	<tr>
-            	<td>File exists</td>
+            	<td>File Exists</td>
                 <td><img src="../images/<?php echo $installer->getYesNoIcon($res['exists']) ?>.png"></td>
             </tr>
             <tr>
-            	<td>File is writable</td>
+            	<td>File is Writable</td>
                 <td><img src="../images/<?php echo $installer->getYesNoIcon($res['iswritable']) ?>.png"></td>
             </tr>
         </table>
@@ -79,19 +80,20 @@ $res = $installer->checkConfFile();
       <p>
 		  <?php if(!$res['exists']){ ?>
           <div class="error">
-            The <code>conf.json</code> file does not exist. Please check if the file has been moved form the root directory of the vline's php example folder or if it has been renamed, restore it and try again by pressing the "Re-check" button.
+            The <code>vline-php-example/conf.json</code> file does not exist. Restore it and then press the
+            "Re-check" button.
           </div>
           <?php }
           else if(!$res['iswritable']){ ?>
           <div class="error">
-            The <code>conf.json</code> file is not writable. Please check the write permissions and try again by pressing the "Re-check" button.
+            The <code>vline-php-example/conf.json</code> file is not writable. Please check the write permissions and try again by pressing the "Re-check" button.
           </div>
           <?php } ?>
       </p>
       <hr>
       <p align="right">
       	<?php if($res['iswritable'] && $res['exists']){ ?>
-        <button type="button" class="btn" onClick="window.location = './database.php'">Next step</button>
+        <button type="button" class="btn" onClick="window.location = './database.php'">Next Step</button>
         <?php } else{ ?>
         <button type="button" class="btn" onClick="location.reload()">Re-check</button>
         <?php } ?>

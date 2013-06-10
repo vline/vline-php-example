@@ -25,7 +25,7 @@ class VlinePHPinstaller{
 	}
 	
 	function checkDBconnectionFromConf(){
-		error_reporting(0);
+		error_reporting(E_ALL);
 		$r = fopen('../conf.json', 'r');
 		$contents = fread($r, filesize('../conf.json'));
 		$conf = json_decode($contents);

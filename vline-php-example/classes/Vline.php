@@ -2,7 +2,7 @@
 /**
  * JSON Web Token implementation
  *
- * Simple implementation of the vline authentication process
+ * Simple implementation of the vLine authentication process
  *
  * @author Andreas Trantidis <andreas@e-labs.gr>
  */
@@ -30,7 +30,7 @@ class Vline{
      * @return void 
      */
 	function init(){
-		$expiry = 480 * 60 * 60;
+		$expiry = 48 * 60 * 60;
 		$sub = $this->serviceID. ":" . $this->userID;
 		$exp = time() + $expiry;
 		$apisecret = $this->apiSecret;

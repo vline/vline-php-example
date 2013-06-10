@@ -13,7 +13,7 @@ else{
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sign in in Vline php demo</title>
+    <title>Sign in to the vLine PHP Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -69,14 +69,14 @@ else{
 
       <form class="form-signin" action="./actions/login.php" method="post">
       	<h2><img src="../images/logo.png"></h2>
-        <h2 class="form-signin-heading">Admin panel</h2>
+        <h2 class="form-signin-heading">Admin Panel</h2>
         <input type="text" class="input-block-level" placeholder="Username" name="username">
         <input type="password" class="input-block-level" placeholder="Password" name="password">
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
         <?php 
 		if(array_key_exists('failed', $_GET)){
 		if($_GET['failed'] == 1){ ?>
-        	<div class="authfailure">Wrong username and password</div>
+        	<div class="authfailure">Wrong username or password</div>
         <?php }} ?>
       </form>
 		

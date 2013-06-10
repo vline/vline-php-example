@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Class's "Checker" "checkInstallation" method checks if the vline php example has been successfully installed and configured  
+// Class's "Checker" "checkInstallation" method checks if the vLine PHP example has been successfully installed and configured
 include('./classes/Checker.php');
 $chk = new Checker();
 if(!$chk->checkInstallation("./"))
@@ -17,7 +17,7 @@ else{
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sign in in Vline php demo</title>
+    <title>Sign in to the vLine PHP Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -72,7 +72,7 @@ else{
 
       <form class="form-signin" method="post" action="./actions/login.php">
       	<h2><img src="images/logo.png"></h2>
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Please Sign In</h2>
         <input type="text" class="input-block-level" placeholder="Username" name="username">
         <input type="password" class="input-block-level" placeholder="Password" name="password">
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
