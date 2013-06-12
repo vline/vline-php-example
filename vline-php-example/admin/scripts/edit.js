@@ -13,7 +13,7 @@ $(document).ready(function(e) {
 function trytosubmit(){
 	var that = $(this);
 	
-	if($.trim($("#surname").val()) == '' || $.trim($("#name").val()) == '' || $.trim($("#username").val()) == '' || $.trim($("#password").val()) == ''){
+	if($.trim($("#name").val()) == '' || $.trim($("#username").val()) == '' || $.trim($("#password").val()) == ''){
 		alert("All fields are madantory");	
 		return false;
 	}

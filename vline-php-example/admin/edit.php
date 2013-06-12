@@ -57,7 +57,7 @@ else{
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><img src="../images/logo.png"></a>
+          <a class="brand" href="#">vLine PHP Example</a>
          <?php include("./admin_menu.php"); ?>
         </div>
       </div>
@@ -74,12 +74,8 @@ else{
       <p>
         <form action="./actions/edituser.php" method="post" onSubmit="return trytosubmit();">
         <table class="table">
-        	<tr>
-            	<td>Surname</td>
-                <td><input name="surname" type="text" id="surname" placeholder="" value="<?php echo $user['surname'] ?>"></td>
-            </tr>
             <tr>
-            	<td>Name</td>
+            	<td>Full Name</td>
                 <td><input name="name" type="text" id="name" placeholder="" value="<?php echo $user['name'] ?>"></td>
             </tr>
             <tr>

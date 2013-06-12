@@ -27,7 +27,7 @@ else{
 	// Vline class
 		include("./classes/Vline.php");
 		$vline = new Vline();
-		$vline->setUser($_SESSION['user']['id'], $_SESSION['user']['surname']." ".$_SESSION['user']['name']);
+		$vline->setUser($_SESSION['user']['id'], $_SESSION['user']['name']);
 		$vline->init();
 	// Almost ready. All we have to do is to include the vline.js script in the head section.
 	}
@@ -83,10 +83,10 @@ else{
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="#"><img src="images/logo.png"></a>
+          <a class="brand" href="#">vLine PHP Example</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <?php echo $_SESSION['user']['surname']." ".$_SESSION['user']['name'] ?>
+              Logged in as <?php echo $_SESSION['user']['name'] ?>
             </p>
             <ul class="nav">
               <li><a href="./admin/index.php">Go to admin panel</a></li>
@@ -110,7 +110,7 @@ Users that are online are highlighted in blue.</p>
             <ul class="nav nav-list">
               <li class="nav-header">Registered Users</li>
               <?php while($row = mysqli_fetch_array($users, MYSQLI_ASSOC)){  ?>
-              <li class="callbutton" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['surname']." ".$row['name'] ?></a></li>
+              <li class="callbutton" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['name'] ?></a></li>
               <?php } ?>
             </ul>
           </div><!--/.well -->
@@ -200,10 +200,15 @@ Users that are online are highlighted in blue.</p>
 				person.startMedia();
 		  });
 		});
+		
 	  }
 	  
 	  return client;
 	})();
+	
+	$(window).unload(function() {
+	  vlineClient.logout();
+	});
 	</script>
     <!-- /vLine -------------------------------------------->
     

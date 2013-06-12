@@ -53,7 +53,7 @@ else{
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><img src="../images/logo.png"></a>
+          <a class="brand" href="#">vLine PHP Example</a>
          <?php include("./admin_menu.php"); ?>
         </div>
       </div>
@@ -71,12 +71,8 @@ else{
       	<h2>Add User</h2>
         <form action="./actions/adduser.php" method="post" onSubmit="return trytosubmit();">
         <table class="table">
-        	<tr>
-            	<td>Surname</td>
-                <td><input type="text" placeholder="" name="surname" id="surname"></td>
-            </tr>
             <tr>
-            	<td>Name</td>
+            	<td>Full Name</td>
                 <td><input type="text" placeholder="" name="name" id="name"></td>
             </tr>
             <tr>
@@ -99,8 +95,7 @@ else{
         <table class="table">
         	<tr>
             	<th width="2%">#</th>
-                <th width="40%">Surname</th>
-                <th width="40%">Name</th>
+                <th width="40%">Full Name</th>
                 <th width="18%"></th>
             </tr>
             <?php 
@@ -109,7 +104,6 @@ else{
 			?>
             <tr>
             	<td><?php echo $index++ ?></td>
-                <td><?php echo $row['surname'] ?></td>
                 <td><?php echo $row['name'] ?></td>
                 <td>
                 	<a href="./edit.php?uid=<?php echo $row['id'] ?>">Edit</a>

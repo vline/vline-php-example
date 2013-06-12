@@ -37,7 +37,7 @@ $res = $installer->checkConfFile();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><img src="../images/logo.png"></a>
+          <a class="brand" href="#">vLine PHP Example</a>
          <?php 
 		 $pos = "confcheck";
 		 include('./install_menu.php');

@@ -63,7 +63,6 @@ class VlinePHPinstaller{
 				`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 				`username` VARCHAR( 150 ) NOT NULL ,
 				`password` VARCHAR( 150 ) NOT NULL ,
-				`surname` VARCHAR( 150 ) NOT NULL ,
 				`name` VARCHAR( 150 ) NOT NULL ,
 				`isadmin` TINYINT( 1 ) NOT NULL DEFAULT  '0'
 				) ENGINE = INNODB;") == TRUE){
@@ -74,12 +73,11 @@ class VlinePHPinstaller{
 							`id` ,
 							`username` ,
 							`password` ,
-							`surname` ,
 							`name` ,
 							`isadmin`
 							)
 							VALUES (
-							NULL ,  'admin',  'admin',  'Super',  'Admin',  '1'
+							NULL ,  'admin',  'admin',  'Super Admin',  '1'
 						);");
 						$toreturn['admincreated'] = true;	
 					}

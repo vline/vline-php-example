@@ -60,7 +60,6 @@ class DbHandler{
 	
 	function addUser($data){
 		$query = "insert into `user` set 
-			`surname` = '".$this->mysqli->real_escape_string($data['surname'])."',
 			`name` = '".$this->mysqli->real_escape_string($data['name'])."',
 			`username` = '".$this->mysqli->real_escape_string($data['username'])."',
 			`password` = '".$this->mysqli->real_escape_string($data['password'])."' ";
@@ -91,7 +90,6 @@ class DbHandler{
 	
 	function saveUser($data){
 		$query = "update `user` set 
-			`surname` = '".$this->mysqli->real_escape_string($data['surname'])."',
 			`name` = '".$this->mysqli->real_escape_string($data['name'])."',
 			`username` = '".$this->mysqli->real_escape_string($data['username'])."',
 			`password` = '".$this->mysqli->real_escape_string($data['password'])."'
