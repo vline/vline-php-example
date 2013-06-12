@@ -108,9 +108,9 @@ Users that are online are highlighted in blue.</p>
           </div><!--/.well -->
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Registered Users</li>
+              <li class="nav-header">Users List</li>
               <?php while($row = mysqli_fetch_array($users, MYSQLI_ASSOC)){  ?>
-              <li class="callbutton" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['name'] ?></a></li>
+              <li class="callbutton disabled" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['name'] ?></a></li>
               <?php } ?>
             </ul>
           </div><!--/.well -->
@@ -181,9 +181,9 @@ Users that are online are highlighted in blue.</p>
 		  // update button state with presence
 		  function onPresenceChange() {
 			if(person.getPresenceState() == 'online'){
-				button.removeClass().addClass('active');	
+			    button.removeClass().addClass('active');
 			}else{
-				button.removeClass();	
+			    button.removeClass().addClass('disabled');
 			}
 			button.attr('data-presence', person.getPresenceState());
 		  }
@@ -196,6 +196,10 @@ Users that are online are highlighted in blue.</p>
 		
 		  // start a call when button is clicked
 		  button.click(function() {
+		      	  if (person.getId() == vlinesession.getLocalPersonId()) {
+				alert('You cannot call yourself. Login as another user in an incognito window');
+				return;
+		       	  }
 			  if(button.hasClass('active'))
 				person.startMedia();
 		  });
