@@ -192,7 +192,7 @@ Users that are online are highlighted in blue.</p>
 		  onPresenceChange();
 		
 		  // handle presence changes
-		  person.on('change', onPresenceChange);
+		  person.on('change:presenceState', onPresenceChange);
 		
 		  // start a call when button is clicked
 		  button.click(function() {
