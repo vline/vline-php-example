@@ -4,7 +4,6 @@
  *
  * Simple implementation of the vLine authentication process
  *
- * @author Andreas Trantidis <andreas@e-labs.gr>
  */
 
 class Vline{

@@ -147,6 +147,10 @@ Users that are online are highlighted in blue.</p>
 	<!-- vLine ------------------------------------------->
 	<script>
 	var vlineClient = (function(){
+	  if('<?php echo $vline->getServiceID() ?>' == 'YOUR_SERVICE_ID' || '<?php echo $vline->getServiceID() ?>' == 'YOUR_SERVICE_ID'){
+		alert('Please make sure you have created a vLine service and that you have properly set the $serviceID and $apiSecret variables in classes/Vline.php file.');	  
+	  }
+	  
 	  
 	  var client, vlinesession,
 		authToken = '<?php echo $vline->getJWT() ?>',
@@ -165,7 +169,6 @@ Users that are online are highlighted in blue.</p>
 	
 	  function onLogin(event) {
 		vlinesession = event.target;
-
 		// Find and init call buttons and init them
 		$(".callbutton").each(function(index, element) {
            initCallButton($(this)); 
